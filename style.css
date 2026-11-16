@@ -1,0 +1,101 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    background-image: url(./images/gray_background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    user-select: none;
+}
+
+.platform {
+    background: linear-gradient(to top, gray, black);
+    box-shadow: 0px 5px 3px 3px rgba(71, 71, 71, 0.24);
+    border-radius: 30px;
+    width: 960px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box {
+    background: linear-gradient(to bottom, gray, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border-radius: 20px;
+    margin: 10px 0px;
+    transition: 0.2s;
+}
+
+
+@media (max-width: 960px) {
+    .platform {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin: 150px 40px 0px 40px;
+    }
+
+    .box {
+        width: 80%;
+        height: 100px;
+        box-shadow: inset 0px 5px 3px 3px rgba(71, 71, 71, 0.5);
+        border-radius: 10px;
+        background: linear-gradient(to top, gray, black);
+    }
+}
+
+.box:hover {
+    background: linear-gradient(to top, orangered, red, red);
+    font-size: xx-large;
+    color: green;
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.678);
+    position: relative;
+    top: -3px;
+    transition: 0.1s;
+    opacity: 0.9;
+    animation: "box" 1s infinite alternate;
+}
+
+@keyframes box {
+    0% {
+        transform: scale(1.001);
+        background-color: white;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.61);
+    }
+
+    100% {
+        transform: scale(0.950);
+        box-shadow: 0px 0px 5px 5px lime;
+    }
+}
+
+.text:hover {
+    animation: "text" 1s infinite alternate;
+    font-size: 150px;
+    transition: 0.5s;
+}
+
+@keyframes text {
+    to {
+        transform: rotate(2170deg);
+        transition: 0.3s;
+        color: lime;
+    }
+}
+
+/* @keyframes text {
+    to {
+        text-shadow: -5px -5px 3px black;
+    }
+} */
